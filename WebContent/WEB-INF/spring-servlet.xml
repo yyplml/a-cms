@@ -28,7 +28,9 @@
 			value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
 
-	<context:component-scan base-package="org.sing.sp">
-
+	<bean id="pluginLoader" class="org.spframework.PluginApplicationListener">
+	</bean>
+	
+	<context:component-scan base-package="org.acms.admin">
 	</context:component-scan>
 </beans>
