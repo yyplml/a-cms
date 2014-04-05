@@ -1,0 +1,28 @@
+<div class="table-responsive">
+	<table class="table table-hover table-bordered">
+		<thead>
+			<tr>
+				<th ng-repeat="name in tableHeads">{{name}}</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in dataList">
+				<td ng-repeat="value in tableHeads" ng-init="item.$editing=false"
+					ng-dblclick="item.$editing=!item.$editing"><span
+					ng-bind="item[value]" ng-if="!item.$editing"></span> <input
+					class="form-control  input-sm" type="text" ng-model="item[value]"
+					ng-show="item.$editing"></td>
+				<td><a class="btn btn-sm btn-info" ng-if="!item.$editing"
+					ng-click="item.$editing=true"><i class="icon-edit icon-large"></i>
+						Edit</a> <a class="btn btn-sm btn-danger" ng-if="!item.$editing"><i
+						class="icon-trash icon-large"></i> Delete</a> <a
+					class="btn btn-sm btn-success" ng-if="item.$editing"
+					ng-click="save(item)"><i class="icon-save icon-large"></i> Save</a>
+					<a class="btn btn-sm btn-warning" ng-if="item.$editing"
+					ng-click="save(item)"><i class="icon-refresh icon-large"></i>
+						Cancel</a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

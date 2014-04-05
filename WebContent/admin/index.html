@@ -1,0 +1,154 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Welcome to aCMS</title>
+<base href="/aCMS/admin/">
+<link href="../content/lib/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet" />
+<link href="../content/lib/font-awesome/css/font-awesome.css"
+	rel="stylesheet" />
+<link href="../content/css/a-cms-ui.css" rel="stylesheet" />
+</head>
+<body ng-controller="mainCtrl">
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">aCMS</a>
+		</div>
+
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">模板管理</a></li>
+				<li><a href="#">插件管理</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">系统设置 <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">模板管理</a></li>
+						<li><a href="#">插件管理</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#"><i class=" icon-question-sign"></i>帮助</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown"><i class=" icon-user"></i>管理员 <b
+						class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="change-password"><i class="icon-key"></i>修改密码</a></li>
+						<li><a href="system-setting"><i class="icon-cog"></i>网站设置</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="icon-signout"></i> 注销</a></li>
+					</ul></li>
+			</ul>
+		</div>
+	</div>
+	<div class="navbar">&nbsp;</div>
+	<div>
+		<!-- left panel start-->
+		<div class="col-lg-2 col-md-3">
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-toggle="collapse"
+								data-parent="#accordion" href="#collapseOne"><i
+								class="icon-sitemap"></i>内容管理 </a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<ul>
+								<li><a href="#/content/page">页面管理</a></li>
+								<li><a href="#/content/sitemap">站点地图</a></li>
+								<li><a href="#/content/clear-cache">清理缓存</a></li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-toggle="collapse"
+								data-parent="#accordion" href="#collapseTwo"><i
+								class="icon-screenshot"></i> 模板管理</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li><a href="#/template/list">模板列表</a></li>
+								<li><a href="#/template/upload">上传模板</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-toggle="collapse"
+								data-parent="#accordion" href="#collapseThree"><i
+								class=" icon-wrench"></i> 插件管理</a>
+						</h4>
+					</div>
+					<div id="collapseThree" class="panel-collapse collapse">
+						<div class="panel-body">
+							<ul>
+								<li><a href="#/widgets/list">插件列表</a></li>
+								<li><a href="#/widgets/scan">扫描插件</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- left panel end -->
+		<!-- right panel start -->
+		<div class="col-lg-10 col-md-9">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Library</a></li>
+				<li class="active">Data</li>
+			</ol>
+			<div class="panel panel-default">
+				<!-- <div class="panel-heading"></div> -->
+				<div class="panel-body" data-ng-view></div>
+			</div>
+		</div>
+		<!-- right panel end -->
+	</div>
+
+	<!-- foot start -->
+	<div class="navbar navbar-default navbar-fixed-bottom"
+		role="navigation">
+		<div class="pull-right">
+			Code licensed under <a
+				href="http://www.apache.org/licenses/LICENSE-2.0">Apache License
+				v2.0</a> Author:<a href="mailto:esin.zhong@gmail.com">sing</a> Version
+			0.1
+		</div>
+	</div>
+	<script src="../content/lib/jquery/jquery-1.11.0.min.js"></script>
+	<script src="../content/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="../content/lib/angularjs/angular.min.js"></script>
+	<script src="../content/lib/angularjs/angular-route.min.js"></script>
+	<script src="../content/lib/angularjs/angular-animate.min.js"></script>
+	<script src="../content/lib/angularjs/angular-sanitize.min.js"></script>
+
+	<script src="index.js"></script>
+</body>
+
+</html>

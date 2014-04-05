@@ -10,13 +10,10 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<mvc:annotation-driven>
-		<mvc:message-converters register-defaults="true">
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
+	<!-- <mvc:annotation-driven> <mvc:message-converters register-defaults="true"> 
+		<bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+		<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" /> 
+		</bean> </mvc:message-converters> </mvc:annotation-driven> -->
 	<!-- <mvc:annotation-driven enable-matrix-variables="true" /> -->
 
 	<!-- 视图解释类 -->
@@ -28,9 +25,10 @@
 			value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
 
+
 	<bean id="pluginLoader" class="org.spframework.PluginApplicationListener">
 	</bean>
-	
+
 	<context:component-scan base-package="org.acms.admin">
 	</context:component-scan>
 </beans>
