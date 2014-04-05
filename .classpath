@@ -13,29 +13,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib"/>
-	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-commons-annotations-4.0.4.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-core-4.3.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.22-bin.jar"/>
-	<classpathentry kind="lib" path="lib/spring-aop-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-aspects-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-beans-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-core-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-expression-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-instrument-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-jdbc-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-jms-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-orm-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-oxm-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-tx-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-webmvc-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/spring-web-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-support-4.0.0.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
