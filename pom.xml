@@ -38,6 +38,32 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-ajp</artifactId>
+						<version>${jetty.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<webAppConfig>
+						<!-- <defaultsDescriptor>webdefault.xml</defaultsDescriptor> -->
+						<extraClasspath>
+							target/classes
+						</extraClasspath>
+					</webAppConfig>
+					<jettyConfig>jetty.xml</jettyConfig>
+					<scanTargets>
+						<scanTarget>target/classes</scanTarget>
+
+					</scanTargets>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<repositories>
@@ -46,40 +72,66 @@
 			<name>spring-framework</name>
 			<layout>default</layout>
 			<url> http://maven.springframework.org/release</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>jboss-repos</id>
-			<name>jboss repos</name>
-			<layout>default</layout>
-			<url>https://repository.jboss.org/nexus/content/repositories/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
 		</repository>
 		<repository>
-			<id>apache-repos</id>
-			<layout>default</layout>
-			<url>http://central.maven.org/maven2/org/apache/</url>
+			<id>jboss</id>
+			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 		<repository>
-			<id>mavenhub-repos</id>
-			<layout>default</layout>
-			<url>http://maven-repository.com/artifact/org.aspectj/</url>
+			<id>Maven Plugin Repository</id>
+			<url>http://struts2plugin-maven-repo.googlecode.com/svn/trunk/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
+
+		<repository>
+			<id>Kaptcha</id>
+			<url>http://repository.sonatype.org/content/groups/forge/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>opencast-project</id>
+			<url>
+				http://repository.opencastproject.org/nexus/content/repositories/public/
+			</url>
+		</repository>
+		<repository>
+			<id>maven2</id>
+			<url>http://repo1.maven.org/maven2</url>
+		</repository>
+		<!-- <repository> <id>mavenhub-repos</id> <url>http://maven-repository.com/artifact/org.aspectj/</url> 
+			</repository> -->
 	</repositories>
 	<dependencies>
 		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+			<version>1.2.16</version>
 		</dependency>
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -102,6 +154,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.22</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -180,12 +237,18 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<spring.version>4.0.0.RELEASE</spring.version>
+		<spring.version>3.2.8.RELEASE</spring.version>
 		<hibernate.version>3.5.6-Final</hibernate.version>
+		<jetty.version>8.1.9.v20130131</jetty.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>

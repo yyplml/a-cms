@@ -1,5 +1,7 @@
 package org.spframework.web;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
@@ -8,31 +10,31 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.web.servlet.DispatcherServlet;
 
-public class PluginDispatcherServlet extends DispatcherServlet {
-
+public class PluginDispatcherServlet  {
+	private Log logger = LogFactory.getLog(PluginDispatcherServlet.class);
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Override
+	//@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>1>>>>>>>>>>>>>>>>>>");
-		super.onApplicationEvent(event);
+		logger.debug(">>>>>>>>>>>>>>>>>>>>>>>plugin applcation event>>>>>>>>>>>>>>>>>>");
+		//super.onApplicationEvent(event);
 		logger.debug(">>>>>>PluginDispatcherServlet>>>>>");
 	}
 
-	@Override
+	//@Override 
 	public void onRefresh(ApplicationContext context) {
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>2>>>>>>>>>>>>>>>>>>>");
-		this.loadPlubin(context);
+		logger.debug(">>>>>>>>>>>>>>>>>>>>>>plugin refresh >>>>>>>>>>>>>>>>>>>");
+		this.loadPlugin(context);
 
-		super.onRefresh(context);
+		//super.onRefresh(context);
 	}
 
-	private void loadPlubin(ApplicationContext context) {
-		System.out.println("-------------------");
-		System.out.println(context instanceof ConfigurableApplicationContext);
+	private void loadPlugin(ApplicationContext context) {
+		logger.debug("------load plugin-------------");
+		logger.debug(context instanceof ConfigurableApplicationContext);
 
 		ConfigurableApplicationContext configurableApplicationContext = (ConfigurableApplicationContext) context;
 
